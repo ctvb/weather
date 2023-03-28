@@ -7,83 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Weather</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link src="./style.css">
+    <link rel='stylesheet' href="./style.css">
 </head>
 
 <body>
-<!-- CREATES THE NAVBAR -->
+    <!-- CREATES THE NAVBAR -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="./sun.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
-                    width="112" height="28">
+        <div class="navbar-brand is-danger">
+            <a class="navbar-item" href="https://ctvb.github.io/professional-portfolio/">
+                <img src="./sun.png" alt="Sun with sunglasses" width="75" height="28">
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                <!-- <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span> -->
             </a>
         </div>
     </nav>
-<!-- CREATES THE HEADER AND SUBHEADER -->
+    <!-- CREATES THE HEADER AND SUBHEADER -->
     <container id="header">
-        <h1 class="title">YOUR WEATHER</h1>
-        <h2 class="subtitle">SOME PUN WITH "WEATHER" AND "WHETHER"</h2>
+        <h1 class="title has-text-centered">YOUR WEATHER</h1>
+        <h2 class="subtitle has-text-centered">SOME PUN WITH "WEATHER" AND "WHETHER"</h2>
     </container>
-<!-- CREATES THE INPUT BOX -->
-    <container class="input">
-        <input class="input" type="text" placeholder="Where are Ya'?">
-<!-- CREATS THE BUTTON -->
-        <button class="button">CHECK WEATHER</button>
+    <!-- CREATES THE INPUT BOX -->
+    <div class="columns" id="input">
+        <div class="column is-one-quarter">
+            <!-- <container class="input"> -->
+            <input class="input" type="text" placeholder="Where are Ya'?">
+            <!-- CREATS THE BUTTON -->
+            <button class="button">CHECK WEATHER</button>
+            <!-- </container> -->
+        </div>
+    </div>
+    <container class="columns is-6 is-offset-8">
+        <h1>gddfdfdfadfsfddfs</h1>
+        <h2>gadgafgdsdfggdgddfsdfadfadfdf</h2>
+        <p>gdaddfsdfdfsdfsdf</p>
     </container>
-<!-- THIS CREATS CURRENT WEATHER CARD -->
-    <container>
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    Current Weather
-                </p>
-                <button class="card-header-icon" aria-label="more options">
-                    <span class="icon">
-                        <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                </button>
-            </header>
-        </div>
-        <div class="card">
-            <div class="card-content">
-                <div class="content">
-                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta
-                    gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
-                </div>
-            </div>
-        </div>
-<!-- THIS CREATES FUTURE WEATHER CARD -->
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    Future Weather
-                </p>
-                <button class="card-header-icon" aria-label="more options">
-                    <span class="icon">
-                        <i class="fas fa-angle-down" aria-hidden="true"></i>
-                    </span>
-                </button>
-            </header>
-        </div>
-        <div class="card">
-            <div class="card-content">
-                <div class="content">
-                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta
-                    gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-                    ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
-                </div>
-            </div>
-        </div>
-    </container>
-
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
