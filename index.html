@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<!-- CREATES THE NAVBAR -->
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
@@ -24,20 +25,23 @@
             </a>
         </div>
     </nav>
+<!-- CREATES THE HEADER AND SUBHEADER -->
     <container id="header">
         <h1 class="title">YOUR WEATHER</h1>
         <h2 class="subtitle">SOME PUN WITH "WEATHER" AND "WHETHER"</h2>
     </container>
-
+<!-- CREATES THE INPUT BOX -->
     <container class="input">
         <input class="input" type="text" placeholder="Where are Ya'?">
-        <button class="button">Check WEATHER</button>
+<!-- CREATS THE BUTTON -->
+        <button class="button">CHECK WEATHER</button>
     </container>
+<!-- THIS CREATS CURRENT WEATHER CARD -->
     <container>
         <div class="card">
             <header class="card-header">
                 <p class="card-header-title">
-                    Card header
+                    Current Weather
                 </p>
                 <button class="card-header-icon" aria-label="more options">
                     <span class="icon">
@@ -55,16 +59,31 @@
                 </div>
             </div>
         </div>
+<!-- THIS CREATES FUTURE WEATHER CARD -->
         <div class="card">
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="" alt="Placeholder image">
-                </figure>
+            <header class="card-header">
+                <p class="card-header-title">
+                    Future Weather
+                </p>
+                <button class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </header>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta
+                    gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                </div>
             </div>
         </div>
     </container>
 
-
+<script src="./script.js"></script>
 </body>
 
 </html>
