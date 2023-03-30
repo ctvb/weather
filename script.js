@@ -25,6 +25,7 @@ function currentWeather(city, state) {
 		document.querySelector(".temp").textContent = data.main.temp
 		document.querySelector(".wind").textContent = data.wind.speed
 		document.querySelector(".humidity").textContent = data.main.humidity
+		document.querySelector(".conditions").textContent = data.weather[0].main
 		forecast(data.coord.lat, data.coord.lon)
 		});
 }
@@ -40,7 +41,7 @@ function forecast(lat, lon) {
 			document.querySelector("#weatherCards").innerHTML = ``
 		for (let i = 0; i < data.list.length; i++) {
 			const element = data.list[i];
-			if (element.dt_txt.includes("15:00:00")) {
+			if (element.dt_txt.includes("09:00:00")) {
 				document.querySelector("#weatherCards").innerHTML+=`<div class="column is-2">
 				<div class="card has-background-grey-light">
 					<div class="card-content">
@@ -53,6 +54,7 @@ function forecast(lat, lon) {
 						<p class="content is-medium">Temp: ${element.main.temp}</p>
 						<p class="content is-medium">Wind: ${element.wind.speed}</p>
 						<p class="content is-medium">Humitidy: ${element.main.humidity}</p>
+						<p class="content is-medium">Conditions: ${element.weather[0].main}</p>
 					</div>
 				</div>
 			</div>`
