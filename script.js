@@ -3,7 +3,7 @@
 // clearTimeout.split(" ").join("20");
 
 // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={0ea49ec13420e68ee45ac131d00b02e9}
-
+var cities = []
 var sb = document.querySelector(".sb");
 sb.addEventListener("click", function () {
 	var city = document.querySelector(".city")
@@ -11,6 +11,10 @@ sb.addEventListener("click", function () {
 	var state = document.querySelector(".state")
 	console.log(state.value)
 	currentWeather(city.value, state.value)
+cities.push(city.value)
+	localStorage.setItem("city", JSON.stringify(cities));
+	buttons()
+    // $(this).find("city.value", ".state").val(event);
 })
 
 function currentWeather(city, state) {
@@ -62,5 +66,19 @@ function forecast(lat, lon) {
 		}
 		});
 }
-
-
+var buttoncontainer = document.getElementById("buttons-container")
+function buttons() {
+	var savedcities = JSON.parse(localStorage.getItem("city"))
+	console.log(savedcities)
+	cities = savedcities
+	buttoncontainer.innerHTML = ""
+	for (let index = 0; index < cities.length; index++) {
+		const element = cities[index];
+		console.log(element)
+		var button = document.createElement("button")
+		button.setAttribute("class", "button has-background-danger is-medium mb-2")
+		button.innerHTML = element
+		buttoncontainer.append(button)
+	}
+}
+buttons()
