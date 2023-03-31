@@ -11,10 +11,10 @@ sb.addEventListener("click", function () {
 	var state = document.querySelector(".state")
 	console.log(state.value)
 	currentWeather(city.value, state.value)
-cities.push(city.value)
+	cities.push({city:city.value, state:state.value})
 	localStorage.setItem("city", JSON.stringify(cities));
-	buttons()
-    // $(this).find("city.value", ".state").val(event);
+	buttons(city.value, state.value)
+	// $(this).find("city.value", ".state").val(event);
 })
 
 function currentWeather(city, state) {
@@ -22,15 +22,17 @@ function currentWeather(city, state) {
 	fetch(requesturl)
 		.then((response) => {
 			console.log(response)
-			return response.json()})
+			return response.json()
+		})
 		.then((data) => {
 			console.log(data)
-		document.querySelector("#today").textContent = data.name + ", " + state
-		document.querySelector(".temp").textContent = data.main.temp
-		document.querySelector(".wind").textContent = data.wind.speed
-		document.querySelector(".humidity").textContent = data.main.humidity
-		document.querySelector(".conditions").textContent = data.weather[0].main
-		forecast(data.coord.lat, data.coord.lon)
+			document.querySelector("#today").textContent = data.name + ", " + state.charAt(0).toUpperCase() + state.slice(1)
+			document.querySelector(".img").src="https://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png"
+			document.querySelector(".temp").textContent = data.main.temp
+			document.querySelector(".wind").textContent = data.wind.speed
+			document.querySelector(".humidity").textContent = data.main.humidity
+			document.querySelector(".conditions").textContent = data.weather[0].main
+			forecast(data.coord.lat, data.coord.lon)
 		});
 }
 
@@ -39,20 +41,21 @@ function forecast(lat, lon) {
 	fetch(requesturl)
 		.then((response) => {
 			console.log(response)
-			return response.json()})
+			return response.json()
+		})
 		.then((data) => {
 			console.log(data)
 			document.querySelector("#weatherCards").innerHTML = ``
-		for (let i = 0; i < data.list.length; i++) {
-			const element = data.list[i];
-			if (element.dt_txt.includes("09:00:00")) {
-				document.querySelector("#weatherCards").innerHTML+=`<div class="column is-2">
+			for (let i = 0; i < data.list.length; i++) {
+				const element = data.list[i];
+				if (element.dt_txt.includes("09:00:00")) {
+					document.querySelector("#weatherCards").innerHTML += `<div class="column is-2">
 				<div class="card has-background-grey-light">
 					<div class="card-content">
 						<div class="header-with-icon">
 							<h2 class="title is-4">${element.dt_txt.split(" ")[0]}</h2>
 							<span class="icon is-large has-text-warning">
-								<i class="fas fa-sun"></i>
+								<img class="fas fa-sun img"src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png">
 							</span>
 						</div>
 						<p class="content is-medium">Temp: ${element.main.temp}</p>
@@ -62,12 +65,14 @@ function forecast(lat, lon) {
 					</div>
 				</div>
 			</div>`
+				}
 			}
-		}
 		});
 }
+
+
 var buttoncontainer = document.getElementById("buttons-container")
-function buttons() {
+function buttons(city, state) {
 	var savedcities = JSON.parse(localStorage.getItem("city"))
 	console.log(savedcities)
 	cities = savedcities
@@ -77,8 +82,27 @@ function buttons() {
 		console.log(element)
 		var button = document.createElement("button")
 		button.setAttribute("class", "button has-background-danger is-medium mb-2")
-		button.innerHTML = element
+		button.innerHTML = element.city.charAt(0).toUpperCase() + city.slice(1)
+		button.dataset.state=element.state
+		button.addEventListener("click", function(event){
+			let state = event.target.dataset.state
+			currentWeather(event.target.innerText, state)
+		})
 		buttoncontainer.append(button)
+		var savedCities = [];
+
+		var difvar = JSON.parse(localStorage.getItem('city'));
+		savedCities.push(...difvar)
+		if (savedCities.length < 5) savedCities.unshift({city, state});
+		else {
+			savedCities.unshift({city, state});
+			savedCities.pop();
+		}
+		console.log(savedCities)
+		// JSON.stringify(localStorage.setItem('city', savedCities));
+		localStorage.setItem("city", JSON.stringify(savedCities))
 	}
+
 }
-buttons()
+
+

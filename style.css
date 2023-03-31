@@ -8,3 +8,9 @@
     text-align: center;
     border: solid;
 }
+
+#navhed {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
