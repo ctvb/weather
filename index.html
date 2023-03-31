@@ -22,10 +22,10 @@
                     <h1 class="has-text-centered">WEATHER</h1>
                 </div>
             </container>
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span> -->
             </a>
         </div>
     </nav>
@@ -42,26 +42,22 @@
 
             <!-- FIRST COLUMN (LEFT SIDE) -->
 
-            <h2 class="title is-2">Search</h2>
-            <div class="field is-horizontal">
+            <h2 class="title is-3 has-text-centered">Search</h2>
+            <div class="field">
                 <div class="field-body">
                     <div class="field">
-                        <p class="control is-expanded has-icons-left">
+                        <p class="control">
                             <input class="input is-large city" type="text" placeholder="City">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-city"></i>
                             </span>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="field is-horizontal">
+            <div class="field">
                 <div class="field-body">
                     <div class="field">
-                        <p class="control is-expanded has-icons-left">
+                        <p class="control">
                             <input class="input is-large state" type="text" placeholder="State">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-flag-usa"></i>
                             </span>
                         </p>
                     </div>
@@ -92,9 +88,9 @@
 
 
 
-            <div class="column">
+            <div class="column is-10-tablet">
                 <!-- SECOND COLUMN (RIGHT SIDE) -->
-                <div class="box has-background-primary-light	">
+                <div class="box has-background-primary-light">
                     <h2 class="subtitle is-2 mb-4">
                         <b id="today">Weather</b>
                         <span class="icon is-large">
@@ -107,87 +103,87 @@
                     <h4 class="subtitle is-4">Conditions: <span class = "conditions"></span></h4>
                 </div>
 
-                <h3 class="subtitle is-2">Forecast: </h3>
+                <h3 class="subtitle is-2 has-text-centered">Forecast: </h3>
 
-                <!-- CARDS WITH 5-DAY FORCAST -->
-                <div class="level is-mobile is-multiline is-justify-content-space-between" id="weatherCards">
-                    <div class="column is-2">
+                <!-- CARDS WITH 5-DAY FORECAST -->
+                <div class="level is-multiline is-justify-content-space-between" id="weatherCards">
+                    <div class="label is-2">
                         <div class="card has-background-danger-light">
                             <div class="card-content">
                                 <div class="header-with-icon">
-                                    <h2 class="title is-4">Tomorrow</h2>
+                                    <h2 class="title is-4"></h2>
                                     <span class="icon is-large has-text-warning">
                                         <i class="fas fa-sun"></i>
                                     </span>
                                 </div>
-                                <p class="content is-medium">Temp: </p>
-                                <p class="content is-medium">Wind: </p>
-                                <p class="content is-medium">Humitidy: </p>
-                                <p class="content is-medium">Conditions: </p>
+                                <p class="content is-small-medium">Temp: </p>
+                                <p class="content is-small-medium">Wind: </p>
+                                <p class="content is-small-medium">Humitidy: </p>
+                                <p class="content is-small-medium">Conditions: </p>
                             </div>
                         </div>
                     </div>
-                    <div class="column is-2">
+                    <div class="label is-2">
                         <div class="card has-background-info-light">
                             <div class="card-content">
                                 <div class="header-with-icon">
-                                    <h2 class="title is-4">day</h2>
+                                    <h2 class="title is-4"></h2>
                                     <span class="icon is-large has-text-warning">
                                         <i class="fas fa-sun"></i>
                                     </span>
                                 </div>
-                                <p class="content is-medium">Temp: </p>
-                                <p class="content is-medium">Wind: </p>
-                                <p class="content is-medium">Humitidy: </p>
-                                <p class="content is-medium">Conditions: </p>
+                                <p class="content is-small-medium">Temp: </p>
+                                <p class="content is-small-medium">Wind: </p>
+                                <p class="content is-small-medium">Humitidy: </p>
+                                <p class="content is-small-medium">Conditions: </p>
                             </div>
                         </div>
                     </div>
-                    <div class="column is-2">
+                    <div class="label is-2">
                         <div class="card has-background-info-light">
                             <div class="card-content">
                                 <div class="header-with-icon">
-                                    <h2 class="title is-4">day</h2>
+                                    <h2 class="title is-4"></h2>
                                     <span class="icon is-large has-text-warning">
                                         <i class="fas fa-sun"></i>
                                     </span>
                                 </div>
-                                <p class="content is-medium">Temp: </p>
-                                <p class="content is-medium">Wind: </p>
-                                <p class="content is-medium">Humitidy: </p>
-                                <p class="content is-medium">Conditions: </p>
+                                <p class="content is-small-medium">Temp: </p>
+                                <p class="content is-small-medium">Wind: </p>
+                                <p class="content is-small-medium">Humitidy: </p>
+                                <p class="content is-small-medium">Conditions: </p>
                             </div>
                         </div>
                     </div>
-                    <div class="column is-2">
+                    <div class="label is-2">
                         <div class="card has-background-info-light">
                             <div class="card-content">
                                 <div class="header-with-icon">
-                                    <h2 class="title is-4">day</h2>
+                                    <h2 class="title is-4"></h2>
                                     <span class="icon is-large has-text-warning">
                                         <i class="fas fa-sun"></i>
                                     </span>
                                 </div>
-                                <p class="content is-medium">Temp: </p>
-                                <p class="content is-medium">Wind: </p>
-                                <p class="content is-medium">Humitidy: </p>
-                                <p class="content is-medium">Conditions: </p>
+                                <p class="content is-small-medium">Temp: </p>
+                                <p class="content is-small-medium">Wind: </p>
+                                <p class="content is-small-medium">Humitidy: </p>
+                                <p class="content is-small-medium">Conditions: </p>
                             </div>
                         </div>
                     </div>
-                    <div class="column is-2">
+                    <div class="label is-2">
                         <div class="card has-background-info-light">
                             <div class="card-content">
                                 <div class="header-with-icon">
-                                    <h2 class="title is-4">day</h2>
+                                    <h2 class="title is-4"></h2>
                                     <span class="icon is-large has-text-warning">
                                         <i class="fas fa-sun"></i>
                                     </span>
                                 </div>
-                                <p class="content is-medium">Temp: </p>
-                                <p class="content is-medium">Wind: </p>
-                                <p class="content is-medium">Humitidy: </p>
-                                <p class="content is-medium">Conditions: </p>
+                                <p class="content is-small-medium">Temp: </p>
+                                <p class="content is-small-medium">Wind: </p>
+                                <p class="content is-small-medium">Humitidy: </p>
+                                <p class="content is-small-medium">Conditions: </p>
                             </div>
                         </div>
                     </div>
