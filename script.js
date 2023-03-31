@@ -54,7 +54,7 @@ function forecast(lat, lon) {
 				const element = data.list[i];
 				if (element.dt_txt.includes("09:00:00")) {
 					document.querySelector("#weatherCards").innerHTML += `<div class="column is-2">
-				<div class="card has-background-grey-light">
+				<div class="card has-background-danger-light">
 					<div class="card-content">
 						<div class="header-with-icon">
 							<h2 class="title is-4">${element.dt_txt.split(" ")[0]}</h2>
