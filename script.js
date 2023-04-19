@@ -7,6 +7,7 @@
 var currentDate = document.getElementById("currentDate");
 var fiveDay = document.getElementById("forcastdate");
 
+// GETS THE CITY AND STATE
 var cities = []
 var sb = document.querySelector(".sb");
 sb.addEventListener("click", function () {
@@ -21,6 +22,7 @@ sb.addEventListener("click", function () {
 	// $(this).find("city.value", ".state").val(event);
 })
 
+// PULLS FROM THE WEATHER API
 function currentWeather(city, state) {
 	var requesturl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + state + "&appid=0ea49ec13420e68ee45ac131d00b02e9&units=imperial"
 	fetch(requesturl)
@@ -40,6 +42,7 @@ function currentWeather(city, state) {
 		});
 }
 
+// INPUTS INFORMATION FROM WEATHER API
 function forecast(lat, lon) {
 	var requesturl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=0ea49ec13420e68ee45ac131d00b02e9&units=imperial"
 	fetch(requesturl)
@@ -74,7 +77,7 @@ function forecast(lat, lon) {
 		});
 }
 
-
+// OPERATES THE BUTTON AND ENABLES CLICKS
 var buttoncontainer = document.getElementById("buttons-container")
 function buttons(city, state) {
 	var savedcities = JSON.parse(localStorage.getItem("city"))
@@ -86,7 +89,7 @@ function buttons(city, state) {
 		console.log(element)
 		var button = document.createElement("button")
 		button.setAttribute("class", "button has-background-danger is-medium mb-2")
-		button.innerHTML = element.city.charAt(0).toUpperCase() + city.slice(1)
+		button.innerHTML = element.city.charAt(0).toUpperCase() + element.city.slice(1)
 		button.dataset.state=element.state
 		button.addEventListener("click", function(event){
 			let state = event.target.dataset.state
